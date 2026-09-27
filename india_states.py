@@ -1,0 +1,58 @@
+"""State metadata used by the educational India overview."""
+
+STATE_DATA = {
+    "Andhra Pradesh": (15.91, 79.74, 0.95, "Traffic, industries, road dust and seasonal crop-residue burning"),
+    "Arunachal Pradesh": (28.22, 94.73, 0.45, "Local traffic, household fuel and occasional forest fires"),
+    "Assam": (26.20, 92.94, 0.72, "Traffic, oil and gas activity, brick kilns and biomass burning"),
+    "Bihar": (25.10, 85.31, 1.35, "Road dust, brick kilns, biomass burning and regional pollution transport"),
+    "Chhattisgarh": (21.28, 81.87, 1.12, "Coal mining, thermal power, metal industries and road dust"),
+    "Goa": (15.30, 74.12, 0.62, "Traffic, construction, port activity and mining transport"),
+    "Gujarat": (22.26, 71.19, 1.08, "Industrial clusters, traffic, ports and wind-blown dust"),
+    "Haryana": (29.06, 76.09, 1.48, "Traffic, crop-residue burning, construction dust and regional transport"),
+    "Himachal Pradesh": (31.10, 77.17, 0.62, "Traffic, tourism, household fuel and local industries"),
+    "Jharkhand": (23.61, 85.28, 1.18, "Coal mining, thermal power, steel plants and road dust"),
+    "Karnataka": (15.32, 75.71, 0.88, "Urban traffic, construction, industries and road dust"),
+    "Kerala": (10.85, 76.27, 0.63, "Dense traffic, construction, waste burning and coastal activity"),
+    "Madhya Pradesh": (22.97, 78.66, 1.00, "Road dust, industries, traffic and biomass burning"),
+    "Maharashtra": (19.75, 75.71, 1.08, "Traffic, construction, industries, refineries and road dust"),
+    "Manipur": (24.66, 93.91, 0.58, "Household fuel, traffic, waste burning and forest fires"),
+    "Meghalaya": (25.47, 91.37, 0.58, "Mining, household fuel, traffic and seasonal fires"),
+    "Mizoram": (23.16, 92.94, 0.48, "Biomass burning, household fuel and local traffic"),
+    "Nagaland": (26.16, 94.56, 0.55, "Biomass burning, household fuel, road dust and traffic"),
+    "Odisha": (20.95, 85.10, 1.10, "Mining, metal industries, thermal power and transport dust"),
+    "Punjab": (31.15, 75.34, 1.38, "Crop-residue burning, traffic, industries and road dust"),
+    "Rajasthan": (27.02, 74.22, 1.22, "Desert dust, mining, traffic, construction and industries"),
+    "Sikkim": (27.53, 88.51, 0.42, "Traffic, tourism, household fuel and regional transport"),
+    "Tamil Nadu": (11.13, 78.66, 0.82, "Traffic, industries, thermal power, ports and road dust"),
+    "Telangana": (18.11, 79.02, 1.00, "Urban traffic, construction, industries and road dust"),
+    "Tripura": (23.94, 91.99, 0.58, "Biomass burning, brick kilns, household fuel and traffic"),
+    "Uttar Pradesh": (26.85, 80.95, 1.45, "Road dust, traffic, brick kilns, industries and biomass burning"),
+    "Uttarakhand": (30.07, 79.02, 0.68, "Traffic, tourism, forest fires and regional transport"),
+    "West Bengal": (22.99, 87.85, 1.16, "Traffic, industries, coal combustion, ports and road dust"),
+    "Andaman and Nicobar Islands": (11.74, 92.66, 0.35, "Local traffic, shipping, diesel generators and waste burning"),
+    "Chandigarh": (30.73, 76.78, 1.08, "Traffic, road dust, construction and regional transport"),
+    "Dadra and Nagar Haveli and Daman and Diu": (20.18, 73.02, 0.92, "Industries, freight traffic, construction and road dust"),
+    "Delhi": (28.61, 77.21, 1.72, "Traffic, road and construction dust, industries and regional biomass burning"),
+    "Jammu and Kashmir": (33.78, 76.58, 0.72, "Traffic, household heating, road dust and seasonal burning"),
+    "Ladakh": (34.15, 77.58, 0.42, "Road dust, tourism traffic and household heating"),
+    "Lakshadweep": (10.57, 72.64, 0.28, "Shipping, diesel generation, waste burning and local traffic"),
+    "Puducherry": (11.94, 79.81, 0.68, "Traffic, industries, construction and coastal activity"),
+}
+
+SOLUTION_LIBRARY = {
+    "pm": [
+        "Enforce dust barriers and water sprinkling at construction sites.",
+        "Expand road vacuum sweeping and pave unsealed road shoulders.",
+        "Scale alternatives to crop and waste burning, including collection systems.",
+    ],
+    "gas": [
+        "Enforce continuous emission monitoring and scrubbers on industrial stacks.",
+        "Improve public transport, electric buses, and vehicle-emission inspections.",
+        "Increase adoption of clean household fuels and low-emission industrial fuels.",
+    ],
+    "general": [
+        "Maintain a dense monitoring network and timely public AQI alerts.",
+        "Activate targeted traffic and industrial controls on high-pollution days.",
+        "Plan urban green buffers near major roads and industrial zones.",
+    ],
+}
