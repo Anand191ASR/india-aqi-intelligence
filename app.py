@@ -9,9 +9,10 @@ import plotly.express as px
 import streamlit as st
 
 from aqi_utils import AQI_BANDS, aqi_category
+from generate_data import generate_dataset
 from india_states import SOLUTION_LIBRARY, STATE_DATA
 from live_data import fetch_live_location, fetch_live_state_data, search_indian_locations
-from train import FEATURES
+from train import FEATURES, train_models
 
 
 MODEL_PATH = Path("artifacts/aqi_model.joblib")
@@ -22,9 +23,23 @@ st.set_page_config(page_title="India AQI Intelligence", page_icon="AQ", layout="
 st.title("India Air Quality Intelligence")
 st.caption("AQI prediction, state comparison, possible causes and action ideas")
 
-if not MODEL_PATH.exists() or not DATA_PATH.exists():
-    st.error("The model or dataset is missing. Run `python generate_data.py` and `python train.py` in the terminal.")
-    st.stop()
+
+@st.cache_resource(show_spinner="Preparing the AQI model for first use...")
+def ensure_project_assets() -> None:
+    """Build reproducible runtime assets when a fresh deployment starts."""
+    if not DATA_PATH.exists():
+        DATA_PATH.parent.mkdir(parents=True, exist_ok=True)
+        generate_dataset().to_csv(DATA_PATH, index=False)
+
+    if not MODEL_PATH.exists() or not METRICS_PATH.exists():
+        training_data = pd.read_csv(DATA_PATH, parse_dates=["date"])
+        trained_model, model_metrics = train_models(training_data)
+        MODEL_PATH.parent.mkdir(parents=True, exist_ok=True)
+        joblib.dump(trained_model, MODEL_PATH)
+        METRICS_PATH.write_text(json.dumps(model_metrics, indent=2), encoding="utf-8")
+
+
+ensure_project_assets()
 
 model = joblib.load(MODEL_PATH)
 history = pd.read_csv(DATA_PATH, parse_dates=["date"])
